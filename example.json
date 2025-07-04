@@ -1,0 +1,11 @@
+{
+    "my_class" :{
+        "docstring":[
+            "Me docstring is cool."
+        ],
+        "attr":{
+            "x":0,
+            "y":0
+        }
+    }
+}
