@@ -10,6 +10,21 @@ def parse_str(*args: str):
     return joined + args[len(args) - 1]
 
 def json_construct(file_name:str):
+    """
+    Constructs a class from a json file.
+    Example:
+    ```
+    {
+        "my_class":{ #class name. (must be a valid name)
+            "docstring":["my_docstring"], #provided docstring for class
+            "attr":{ #class attributes (attribute names must be valid)
+                "x":0,
+                "y":0 
+            }
+        }
+    }
+    ```
+    """
     base = ""
     with open(file_name,"r") as file:
         content = json.load(file)
@@ -151,6 +166,9 @@ def Structure(name: str, **attr: dict[str, pair]):
 
 
 def lambda_template(name:str,**arguments):
+    """
+    Constructs a lambda template for use.
+    """
     args = ""
     for key,pair_value in arguments.items():
         pair_value:pair
@@ -164,6 +182,9 @@ def lambda_template(name:str,**arguments):
 
 
 def function_template(name:str,indent:str = "",function_type:type = None,**arguments):
+    """
+    Constructs a function template for use.
+    """
     args = ""
     for key,pair_value in arguments.items():
         pair_value:pair
@@ -187,6 +208,7 @@ def function_template(name:str,indent:str = "",function_type:type = None,**argum
 
 
 def add_import(module_name:str):
+    "adds a import."
     return f"import {module_name}\n"
 
 
