@@ -13,4 +13,3 @@ class my_class:
     x = 0
     y = 0
 
-
